@@ -12,7 +12,7 @@ st.markdown("# League of Legends Level Value Calculator")
 
 gold_helper()
 
-stats_value = pd.read_parquet('/home/jean/Documents/misc-code/HateWatchu/lol-level-value/data/stats_value.parquet')
+stats_value = pd.read_parquet('data/stats_value.parquet')
 stats_value["flat_in_stat"] = stats_value["stat"].str.contains("flat")
 stats_value = stats_value[stats_value["flat_in_stat"]].reset_index(drop=True)
 stats_value['stat'] = stats_value['stat'].str.replace('_flat', '')
